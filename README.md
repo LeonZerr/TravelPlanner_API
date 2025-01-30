@@ -1,6 +1,6 @@
 # Travelplanner-Southeast-Asia
 
-This is an API project created during our Backend Programming course.  
+This is an API project created during my Backend Programming course.  
 A simple Travelplanner API designed to deliver data from our PostgreSQL database for Frontend Developers.
 
 ## Features:
@@ -21,7 +21,7 @@ To set up the project locally, follow these steps:
 
 2. Navigate to the project folder:
     ```bash
-    cd Travelplanner-Southeast-Asia
+    cd TravelPlanner_API
     ```
 
 3. Build and start the Docker containers:
