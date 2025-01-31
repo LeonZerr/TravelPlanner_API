@@ -26,11 +26,11 @@ jobs:
     steps:
       - name: set up environment
         run: |
-              echo "DB_NAME: travelplanner" >> .env
-              echo "DB_USER: ${{ secrets.DB_SECRET }}" >> .env
-              echo "DB_PASSWORD: ${{ secrets.DB_SECRET }}" >> .env
-              echo "DB_HOST: db" >> .env
-              echo "DB_PORT: '5432' " >> .env
+              echo "DB_NAME =  travelplanner" >> .env
+              echo "DB_USER = ${{ secrets.DB_SECRET }}" >> .env
+              echo "DB_PASSWORD =  ${{ secrets.DB_SECRET }}" >> .env
+              echo "DB_HOST = db" >> .env
+              echo "DB_PORT =  '5432' " >> .env
 
       - name: Checkout code
         uses: actions/checkout@v3
