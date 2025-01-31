@@ -32,6 +32,9 @@ jobs:
               echo "DB_HOST = localhost" >> .env
               echo "DB_PORT =  '5432' " >> .env
 
+      - name: display .env
+        run : cat .env
+
       - name: Checkout code
         uses: actions/checkout@v3
 
