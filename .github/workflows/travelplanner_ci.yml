@@ -25,7 +25,9 @@ jobs:
 
     steps:
       - name: display working-directory
-        run: pwd      
+        run: pwd  
+      - name: list-files-directories
+        run: ls -la    
       - name: set up environment
         working-directory: travelplanner 
         run: |
