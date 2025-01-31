@@ -18,7 +18,6 @@ jobs:
           POSTGRES_USER: ${{ secrets.DB_SECRET }} 
           POSTGRES_PASSWORD: ${{ secrets.DB_SECRET }} 
           POSTGRES_NAME: travelplanner 
-          POSTGRES_HOST: localhost 
           POSTGRES_PORT: 5432
         ports:
           - 5432:5432
