@@ -15,9 +15,9 @@ jobs:
       postgres:
         image: postgres:latest
         env:
-          DB_USER: ${{ secrets.DB_SECRET }}
-          DB_PASSWORD: ${{ secrets.DB_SECRET }}
-          DB_NAME: travelplanner
+          DB_USER: ${{ secrets.DB_SECRET }} >> .env
+          DB_PASSWORD: ${{ secrets.DB_SECRET }} >> .env
+          DB_NAME: travelplanner >> .env
           DB_HOST: localhost 
         ports:
           - 5432:5432
