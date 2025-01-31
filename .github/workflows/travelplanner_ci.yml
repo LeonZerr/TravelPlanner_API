@@ -24,13 +24,16 @@ jobs:
         options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
 
     steps:
+      - name: display working-directory
+        run: pwd      
       - name: set up environment
+        working-directory: travelplanner 
         run: |
-              echo "DB_NAME =  travelplanner" >> .env
-              echo "DB_USER = ${{ secrets.DB_SECRET }}" >> .env
-              echo "DB_PASSWORD =  ${{ secrets.DB_SECRET }}" >> .env
-              echo "DB_HOST = localhost" >> .env
-              echo "DB_PORT =  '5432' " >> .env
+              echo "DB_NAME=travelplanner" >> .env
+              echo "DB_USER=${{ secrets.DB_SECRET }}" >> .env
+              echo "DB_PASSWORD=${{ secrets.DB_SECRET }}" >> .env
+              echo "DB_HOST=localhost" >> .env
+              echo "DB_PORT='5432' " >> .env
 
       - name: display .env
         run : cat .env
