@@ -15,15 +15,23 @@ jobs:
       postgres:
         image: postgres:latest
         env:
-          DB_USER: ${{ secrets.DB_SECRET }} >> .env
-          DB_PASSWORD: ${{ secrets.DB_SECRET }} >> .env
-          DB_NAME: travelplanner >> .env
+          DB_USER: ${{ secrets.DB_SECRET }} 
+          DB_PASSWORD: ${{ secrets.DB_SECRET }} 
+          DB_NAME: travelplanner 
           DB_HOST: localhost 
         ports:
           - 5432:5432
         options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
 
     steps:
+      - name: set up environment
+        run: |
+              echo "DB_NAME: travelplanner" >> .env
+              echo "DB_USER: ${{ secrets.DB_SECRET }}" >> .env
+              echo "DB_PASSWORD: ${{ secrets.DB_SECRET }}" >> .env
+              echo "DB_HOST: db" >> .env
+              echo "DB_PORT: 5432" >> .env
+
       - name: Checkout code
         uses: actions/checkout@v3
 
@@ -54,6 +62,7 @@ jobs:
                 pip install pip-review
                 pip-review --auto
   
+
 
 
 
