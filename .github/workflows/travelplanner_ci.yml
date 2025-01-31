@@ -15,10 +15,10 @@ jobs:
       postgres:
         image: postgres:latest
         env:
-          DB_USER: ${{ secrets.DB_SECRET }} 
-          DB_PASSWORD: ${{ secrets.DB_SECRET }} 
-          DB_NAME: travelplanner 
-          DB_HOST: localhost 
+          POSTGRES_USER: ${{ secrets.DB_SECRET }} 
+          POSTGRES_PASSWORD: ${{ secrets.DB_SECRET }} 
+          POSTGRES_NAME: travelplanner 
+          POSTGRES_HOST: localhost 
         ports:
           - 5432:5432
         options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
